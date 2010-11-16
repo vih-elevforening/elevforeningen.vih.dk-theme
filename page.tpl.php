@@ -2,27 +2,17 @@
 
             <div id="branding">
                 <div id="branding-logo">
-                    <a href="http://elevforeningen.vih.dk/"><img src="http://elevforeningen.vih.dk/gfx/images/vih75x151.gif" height="75" alt="Vejle Idrætshøjskoles Elevforening" /></a>
+                    <a href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" height="75" alt="<?php print $site_name; ?>" /></a>
                 </div>
 
-                <h1><?php print $site_title; ?></h1>
+                <h1><?php print $site_name; ?></h1>
             </div>
 
             <div id="search">
             </div>
 
             <div id="navigation-main">
-
-	     <?php if ($main_menu): ?>
-            <?php print theme('links__system_main_menu', array(
-                'links' => $main_menu,
-                    'attributes' => array('id' => 'gnav'),
-                'heading' => array(
-                    'text' => t('Main menu'),
-                    'level' => 'h2',
-                    'class' => array('element-invisible')),
-             )); ?>
-         <?php endif; ?>
+		<?php print render($page['header']); ?>
             </div>
 
             <div id="breadcrumb">
@@ -30,20 +20,28 @@
 
             <div id="content">
                 <div id="content-main">
-                    
-	<h1><?php print $title; ?></h1>
- <?php print render($page['content']); ?>
+			    <div class="element-invisible"></div>
+                            <?php print render($title_prefix); ?>
+                            <?php if ($title): ?><h1 class="title" id="page-title"><span><?php print $title; ?></span></h1><?php endif; ?>
+                            <?php print render($title_suffix); ?>
+                            <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+                            <?php if ($messages): ?><div id="console" class="clearfix"><?php print $messages; ?></div><?php endif; ?>
+                            <?php print render($page['help']); ?>
+                            <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+
+                            <?php print render($page['content']); ?>
 
               </div>
 
                 <div id="content-sub">
 
-<?php print render($page['sidebar_second']); ?>
+		<?php print render($page['sidebar_second']); ?>
                                     </div>
             </div>
 
             <div id="siteinfo">
                 <div id="siteinfo-legal">
+<?php print render($page['footer']); ?>
                 </div>
             </div>
 
