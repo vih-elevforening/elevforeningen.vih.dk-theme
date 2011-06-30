@@ -1,7 +1,14 @@
 name = elevforeningen.vih.dk
 description = Layout is created by Lars Olesen in 2006.
-package = Core
-version = 0.1.0
+version = 7.x-0.1
 core = 7.x
 engine = phptemplate
 stylesheets[all][] = layout.css
+
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_second] = Right sidebar
+regions[footer] = Footer
+
