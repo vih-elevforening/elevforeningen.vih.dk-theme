@@ -1,5 +1,5 @@
-name = elevforeningen.vih.dk
-description = Layout is created by Lars Olesen in 2006.
+name = dji
+description = Layout is created for Vejle Idrætshøjskole by Lars Olesen in 2006.
 version = 7.x-0.1
 core = 7.x
 engine = phptemplate
